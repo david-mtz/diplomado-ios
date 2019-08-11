@@ -11,7 +11,6 @@ import UIKit
 class ProductsCollectionView: UICollectionView {
     
     let spacingCell:CGFloat = 5
-
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         backgroundColor = UIColor.ShopApp.backgroundPage
@@ -21,7 +20,6 @@ class ProductsCollectionView: UICollectionView {
         newLayout.minimumInteritemSpacing = spacingCell
         collectionViewLayout = newLayout
     }
-    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

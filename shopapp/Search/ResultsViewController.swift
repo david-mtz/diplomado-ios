@@ -1,74 +1,77 @@
 //
-//  IndividualCategoryViewController.swift
+//  ResultsViewController.swift
 //  shopapp
 //
-//  Created by David on 7/23/19.
+//  Created by David on 8/4/19.
 //  Copyright © 2019 David. All rights reserved.
 //
 
 import UIKit
 
-class IndividualCategoryViewController: UIViewController {
+class ResultsViewController: UIViewController {
 
-    @IBOutlet weak var orderBy: DropDownTextField!
-    @IBOutlet weak var productsCollectionView: ProductsCollectionView!
-    let  identifierCell = "reuse"
-    var products: [Product] = [Product]()
-    var category: Category? {
+    var name: String = ""
+    var categoryId: String = ""
+    var products: [Product]? {
         didSet {
-            setUpUI()
+            updateData()
         }
     }
+    let identifierCell = "rehuse"
+    @IBOutlet weak var productsCollectionView: ProductsCollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setUpUIForDefaultView()
+        setUp()
+
+        // Do any additional setup after loading the view.
+    }
+    
+    func setUp() {
         productsCollectionView.delegate = self
         productsCollectionView.dataSource = self
         productsCollectionView.register(UINib(nibName: "ProductsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: identifierCell)
         productsCollectionView.backgroundColor = UIColor.ShopApp.backgroundPage
-        orderBy.optionArray = ["Precio - Menor a mayor", "Precio - Mayor a menor", "Alfabeto"]
-        
-        orderBy.didSelect{(selectedText , index ,id) in
-            self.orderArticles(index: index)
-         }
+        title = name
+        loadData()
     }
     
-    func setUpUI() {
-        if let cat = category {
-            navigationItem.title = cat.name
-            getData(categoryId: cat.id)
-        }
-    }
-    
-    func getData(categoryId: Int) {
-        ProductClient.shared.category(categoryId: categoryId) { [weak self] (products) in
+    func loadData() {
+        var query = ["name": name, "categoryId": categoryId]
+        ProductClient.shared.search(query: query) { [weak self] (products) in
+            guard let strongSelf = self else { return }
             self?.products = products
-            self?.productsCollectionView.reloadData()
         }
     }
     
-    func orderArticles(index: Int) {
-        if(index == 0) { // Low to hight
-            products = products.sorted(by: { Float($0.price) ?? 0 < Float($1.price) ?? 0 })
-        } else if(index == 1) { // Hight to low
-            products = products.sorted(by: { Float($0.price) ?? 0 > Float($1.price) ?? 0 })
-        } else if(index == 2) { // Alphabet
-           products = products.sorted(by: { $0.name < $1.name })
-        }
+    func updateData() {
         productsCollectionView.reloadData()
     }
-    
+
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }
 
-extension IndividualCategoryViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-
+extension ResultsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let products = self.products else { return 0 }
         return products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifierCell, for: indexPath) as? ProductsCollectionViewCell else { return UICollectionViewCell() }
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifierCell, for: indexPath) as? ProductsCollectionViewCell, let products = self.products else { return UICollectionViewCell() }
         
         cell.product = products[indexPath.row]
         
@@ -89,6 +92,7 @@ extension IndividualCategoryViewController: UICollectionViewDataSource, UICollec
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let products = self.products else { return }
         let next = IndividualProductViewController(nibName: "IndividualProductViewController", bundle: nil)
         next.product = products[indexPath.row]
         navigationController?.pushViewController(next, animated: true)

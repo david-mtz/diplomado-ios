@@ -11,5 +11,5 @@ import Foundation
 struct Thumbnail: Codable {
     let id: Int
     let url: String
-    let productId: String
+    let productId: Int
 }

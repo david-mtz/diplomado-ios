@@ -8,6 +8,9 @@
 
 import UIKit
 
+
+// Add padding for label
+
 @IBDesignable class PaddingLabel: UILabel {
     
     @IBInspectable var topInset: CGFloat = 5.0

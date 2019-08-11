@@ -18,6 +18,7 @@ struct Product: Codable {
     let tags: String
     let createdAt: String
     let category: CategoryInProduct
+    var number: Int? = 1
 }
 
 struct CategoryInProduct: Codable {

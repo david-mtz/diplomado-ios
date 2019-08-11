@@ -1,19 +1,19 @@
 //
-//  AccountViewController.swift
+//  FAQViewController.swift
 //  shopapp
 //
-//  Created by David on 7/20/19.
+//  Created by David on 8/6/19.
 //  Copyright © 2019 David. All rights reserved.
 //
 
 import UIKit
 
-class AccountViewController: UIViewController {
+class FAQViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Preguntas Frecuentes"
         view.setUpUIForDefaultView()
-        title = "Cuenta"
         // Do any additional setup after loading the view.
     }
     

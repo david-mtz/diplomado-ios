@@ -11,6 +11,7 @@ import UIKit
 
 extension UIView {
     
+    // Default backgroud to page
     func setUpUIForDefaultView() {
         backgroundColor = UIColor.ShopApp.backgroundPage
     }

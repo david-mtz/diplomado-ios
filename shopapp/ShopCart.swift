@@ -12,6 +12,12 @@ class ShopCart {
     
     static let shared = ShopCart()
     
-    let products: [Product] = [Product]()
+    var products: [Product] = [Product]()
+    var directions: [Direction] = [Direction]()
+    
+    init() {
+        directions.append(Direction(alias: "Casa", avenue: "Av. Tepetlapa", outdoorNumber: "30B", interiorNumber: "21", zp: "04800", colony: "Alianza popular revolucionaria", town: "Ciudad de México", state: "Ciudad de México", phone: "5531056094"))
+    }
+    
     
 }

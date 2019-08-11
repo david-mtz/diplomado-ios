@@ -32,12 +32,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         let logoNavImg = UIImageView(image: UIImage(named: "logo"))
         logoNavImg.contentMode = .scaleAspectFit
         self.navigationItem.titleView = logoNavImg
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: Selector("toSearchController"))
-        // TODO: Implementar el slider
-        let slide:SlideHomeView = Bundle.main.loadNibNamed("SlideHomeView", owner: self, options: nil)?.first as! SlideHomeView
-        slide.imgSlider.getImageFromUrl(url: "https://shop-app-ios.herokuapp.com/upload/categories/audifonos.jpg", contentModeFinal: .scaleAspectFill)
-        slidePages.append(slide)
-        setupSlideScrollView()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: Selector("toSearchController"))
+        preloadImgs()
         getData()
     }
     
@@ -50,19 +46,20 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
 
     
     func preloadImgs() {
-        /*guard let unwrapping = self.product else { print("Vacio"); return }
-        client.show(id: unwrapping.id) { (listImgs) in
-            for img in listImgs {
-                let slide:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-                slide.imgUIImageView.getImageFromUrl(url: img.url)
-                self.slides.append(slide)
+        PromotionClient.shared.list(success: { [weak self] (list) in
+            guard let strongSelf = self else { return }
+            for prom in list {
+                let slide:SlideHomeView = Bundle.main.loadNibNamed("SlideHomeView", owner: self, options: nil)?.first as! SlideHomeView
+                slide.imgSlider.getImageFromUrl(url: Config.host.value! + "/" + prom.thumbnailUrl, contentModeFinal: .scaleAspectFit)
+                slide.promotion = prom
+                strongSelf.slidePages.append(slide)
             }
-            self.setupSlideScrollView()
-        }*/
+            strongSelf.setupSlideScrollView()
+        })
     }
     
     func setupSlideScrollView() {
-        sliderScrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 300)
+        sliderScrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 150)
         sliderScrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slidePages.count), height: 1.0)
         
         sliderScrollView.isPagingEnabled = true
@@ -84,9 +81,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     }
 
     @objc func toSearchController() {
-        print("To search controller")
+        let next = SearchViewController(nibName: "SearchViewController", bundle: nil)
+        navigationController?.pushViewController(next, animated: true)
     }
-
+    
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -117,7 +115,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let next = self.storyboard?.instantiateViewController(withIdentifier: "IndividualProductViewController") as! IndividualProductViewController
+        let next = IndividualProductViewController(nibName: "IndividualProductViewController", bundle: nil)
         next.product = products[indexPath.row]
         navigationController?.pushViewController(next, animated: true)
     }

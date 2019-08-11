@@ -39,9 +39,7 @@ class IndividualProductViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func setUpConstraints() {
-        descriptionTextView.isEditable = false
-        descriptionTextView.isSelectable = false
-        descriptionTextView.contentInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: -5)
+        descriptionTextView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 0, right: 5)
     }
 
     func preloadImgs() {
@@ -77,5 +75,16 @@ class IndividualProductViewController: UIViewController, UIScrollViewDelegate {
         let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
         slidePageControl.currentPage = Int(pageIndex)
     }
-
+    
+    @IBAction func addProductBtnAction(_ sender: UIButton) {
+        guard let product = self.product else { return }
+        ShopCart.shared.products.append(product)
+        if let tabItems = tabBarController?.tabBar.items, let navigation = navigationController {
+            let tabItem = tabItems[2]
+            tabItem.badgeValue = "\(ShopCart.shared.products.count)"
+            navigation.popViewController(animated: true)
+        }
+        
+    }
+    
 }

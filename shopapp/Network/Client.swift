@@ -25,7 +25,8 @@ struct Client {
         request(method, path: path, queryItems: nil, body: body, completionHandler: completionHandler, errorHandler: errorHandler)
     }
     
-    func request(_ method: String, path: String, queryItems: [String: String]?, body: Data?, completionHandler: completionHandler?, errorHandler: errorHandler?) {
+    func
+        request(_ method: String, path: String, queryItems: [String: String]?, body: Data?, completionHandler: completionHandler?, errorHandler: errorHandler?) {
         var requestURLComponents = baseURLComponents
         requestURLComponents.path = path
         requestURLComponents.queryItems = castQueryItems(queryItems: queryItems)
@@ -39,7 +40,6 @@ struct Client {
         request.setValue(contentType, forHTTPHeaderField: "Content-Type")
         request.httpMethod = method
         request.httpBody = body
-        
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if error != nil {
@@ -58,7 +58,7 @@ struct Client {
     }
     
     private func castQueryItems(queryItems: [String:String]?) -> [URLQueryItem] {
-        guard let rawItems = queryItems, rawItems.isEmpty else { return [] }
+        guard let rawItems = queryItems, !rawItems.isEmpty else { return [] }
         var items = [URLQueryItem]()
         for (key, value) in rawItems {
             items.append(URLQueryItem(name: key, value: value))

@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="5" width="560" height="148.5"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGb-2Z-Mi9" customClass="PaddingLabel" customModule="shopapp" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="96" width="178.5" height="37.5"/>
+                        <rect key="frame" x="0.0" y="106" width="118.5" height="27.5"/>
                         <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="0.79829302226027399" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

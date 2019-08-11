@@ -8,6 +8,23 @@
 
 import UIKit
 
+enum tabItemName: String{
+    
+    case inicio
+    case categorías
+    case cesta
+    case cuenta
+    
+    var value: String? {
+        switch self {
+            case .inicio: return "home"
+            case .categorías: return "categories"
+            case .cesta: return "cart"
+            case .cuenta: return "account"
+        }
+    }
+}
+
 class CustomTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
@@ -25,7 +42,8 @@ class CustomTabBarViewController: UITabBarController {
                 if let image = item.image {
                     item.image = image.withRenderingMode(.alwaysOriginal)
                     if let titleName = item.title?.lowercased() {
-                        item.selectedImage = UIImage(named: "\(titleName)-selected")?.withRenderingMode(.alwaysOriginal)
+                        guard let titleIcon = tabItemName.init(rawValue: titleName)?.value else { return }
+                        item.selectedImage = UIImage(named: "\(titleIcon)-selected")?.withRenderingMode(.alwaysOriginal)
                         
                     }
                 }

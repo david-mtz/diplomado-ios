@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="shopapp" customModuleProvider="target">
+            <connections>
+                <outlet property="resultTableView" destination="fOZ-jy-fGc" id="aLa-Gz-Chu"/>
+                <outlet property="searchBar" destination="pMV-r7-WjF" id="oRv-sB-ihZ"/>
+                <outlet property="showAllButton" destination="xhd-rF-KIK" id="P1i-Ss-Tdx"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" placeholder="Buscar producto..." translatesAutoresizingMaskIntoConstraints="NO" id="pMV-r7-WjF">
+                    <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                    <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fOZ-jy-fGc">
+                    <rect key="frame" x="0.0" y="100" width="414" height="796"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhd-rF-KIK">
+                    <rect key="frame" x="0.0" y="852" width="414" height="44"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="eXp-Rd-sO9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Ver todo"/>
+                    <connections>
+                        <action selector="viewAllButonAction:" destination="-1" eventType="touchUpInside" id="dOg-qm-W5m"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fOZ-jy-fGc" firstAttribute="top" secondItem="pMV-r7-WjF" secondAttribute="bottom" id="1Vn-ec-Ra0"/>
+                <constraint firstItem="pMV-r7-WjF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Dqj-gO-Kyn"/>
+                <constraint firstItem="xhd-rF-KIK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="KnW-p2-c9C"/>
+                <constraint firstItem="fOZ-jy-fGc" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Lwi-00-9d6"/>
+                <constraint firstItem="pMV-r7-WjF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="PMZ-Ia-mPe"/>
+                <constraint firstItem="pMV-r7-WjF" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Spc-wn-UqG"/>
+                <constraint firstItem="fOZ-jy-fGc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ylr-9H-s7J"/>
+                <constraint firstAttribute="bottom" secondItem="xhd-rF-KIK" secondAttribute="bottom" id="eLR-c5-fW7"/>
+                <constraint firstItem="xhd-rF-KIK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="q1J-l5-fQ2"/>
+                <constraint firstAttribute="bottom" secondItem="fOZ-jy-fGc" secondAttribute="bottom" id="w36-tU-RMm"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="95.758928571428569"/>
+        </view>
+    </objects>
+</document>
