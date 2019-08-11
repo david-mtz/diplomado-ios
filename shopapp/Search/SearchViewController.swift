@@ -27,6 +27,7 @@ class SearchViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // Set up UI
     func setUpUI() {
         resultTableView.backgroundColor = UIColor.ShopApp.backgroundPage
         let textFieldInsideSearchBar = searchBar.value(forKey: "_searchField") as? UITextField
@@ -35,7 +36,7 @@ class SearchViewController: UIViewController {
         textFieldInsideSearchBar?.layer.borderColor = UIColor.ShopApp.yellow.cgColor
     }
 
-    
+    // Action for show all results
     @IBAction func viewAllButonAction(_ sender: UIButton) {
         let next = ResultsViewController(nibName: "ResultsViewController", bundle: nil)
         next.name = searchBar.text ?? ""        

@@ -54,6 +54,7 @@ class CreateDirectionViewController: UIViewController {
                 guard let idCell = self.idCell else { return }
                 ShopCart.shared.directions[idCell] = direction
             }
+            ShopCart.shared.saveDirectionStorage()
             
             self.navigationController?.popViewController(animated: true)
             

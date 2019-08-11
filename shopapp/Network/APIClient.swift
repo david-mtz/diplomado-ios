@@ -9,7 +9,8 @@
 import Foundation
 
 struct Storage {
-    var data: Codable
+    var data: Codable?
+    var message: String?
 }
 
 class APIClient {
@@ -29,9 +30,13 @@ class APIClient {
         get(endpoint: endpoint, queryItems: nil, success: success)
     }
     
+    internal func post<T>(payload: Data?, endpoint: String, success: @escaping (T) -> Void) where T: Codable {
+        request("POST", path: "\(path)\(endpoint)", queryItems: nil, payloadData: payload, successClosure: success, errorHandler: nil)
+    }
+
     internal func request<Model>(_ method: String, path: String, queryItems: [String: String]?, payloadData: Data?, successClosure: @escaping (Model) -> Void, errorHandler: errorHandler?) where Model:Codable {
         // let data = payload
-        client.request(method, path: path, queryItems: queryItems, body: nil, completionHandler: { [weak self ](response, data) in
+        client.request(method, path: path, queryItems: queryItems, body: payloadData, completionHandler: { [weak self ](response, data) in
             guard let selfStrong = self else { return }
             guard response.successful() else { return }
             let decoder = JSONDecoder()
@@ -47,11 +52,12 @@ class APIClient {
         }, errorHandler: errorHandler)
     }
     
-    func encode<T>(payload: T?) -> Data? where T:Codable {
+    func generatePayload<T>(payload: T?) -> Data? where T:Codable {
         guard let payload = payload else { return nil }
         let encoder = JSONEncoder()
         encoder.keyEncodingStrategy = .convertToSnakeCase
-        return try? encoder.encode(payload)
+        let encoded = try? encoder.encode(payload)
+        return encoded
     }
     
     

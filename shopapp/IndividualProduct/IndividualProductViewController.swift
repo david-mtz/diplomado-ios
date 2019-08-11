@@ -31,7 +31,7 @@ class IndividualProductViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func updateView() {
-        guard let unwrapping = self.product else { print("Vacio"); return }
+        guard let unwrapping = self.product else { return }
         priceLabel.text = "$ \(unwrapping.price)"
         nameLabel.text = unwrapping.name
         descriptionTextView.text = "Description:\n\(unwrapping.description)"
@@ -43,7 +43,7 @@ class IndividualProductViewController: UIViewController, UIScrollViewDelegate {
     }
 
     func preloadImgs() {
-        guard let unwrapping = self.product else { print("Vacio"); return }
+        guard let unwrapping = self.product else { return }
         ProductClient.shared.listThumbnails(productId: unwrapping.id) { (listImgs) in
             for img in listImgs {
                 let slide:SlideProductView = Bundle.main.loadNibNamed("SlideProductView", owner: self, options: nil)?.first as! SlideProductView

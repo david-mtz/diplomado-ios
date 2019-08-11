@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct ContainerKey: Codable {
+    let key: String?
+}
+
 class KeysClient: APIClient {
     
     static let shared = KeysClient()
@@ -16,8 +20,9 @@ class KeysClient: APIClient {
         self.init(client: Client(), path: Config.baseAPI.value! + "")
     }
     
-    func getKeys(success: @escaping ([Category]) -> Void) {
-        get(endpoint: "/keys", success: success)
+    func getKey(uidevice: String, success: @escaping (ContainerKey) -> Void) {
+        let queryItems: [String:String] = ["uidevice": uidevice]
+        get(endpoint: "/key", queryItems: queryItems, success: success)
     }
     
     

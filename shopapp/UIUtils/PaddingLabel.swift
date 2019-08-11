@@ -18,11 +18,16 @@ import UIKit
     @IBInspectable var leftInset: CGFloat = 16.0
     @IBInspectable var rightInset: CGFloat = 16.0
     
+    
+    /// Set padding text to label
+    ///
+    /// - Parameter rect: rect Define Size of label
     override func drawText(in rect: CGRect) {
         let insets = UIEdgeInsets.init(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
         super.drawText(in: rect.inset(by: insets))
     }
     
+    /// Simple cgsize generation
     override var intrinsicContentSize: CGSize {
         let size = super.intrinsicContentSize
         return CGSize(width: size.width + leftInset + rightInset,

@@ -9,7 +9,11 @@
 import Foundation
 import UIKit
 
+// Get uidevice
 public extension UIDevice {
+    
+    
+    /// Get the identifier dispositive
     static let identifier: String = {
         if let vendorId = UIDevice.current.identifierForVendor {
             return "\(vendorId.uuidString)"

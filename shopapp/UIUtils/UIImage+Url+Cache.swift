@@ -72,6 +72,8 @@ extension UIImageView {
         
     }
     
+    
+    /// Preload animation (rotation image)
     func preloadAnimation() {
         let kAnimationKey = "rotation"
         

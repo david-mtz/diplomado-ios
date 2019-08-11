@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63013D5C230088B90021D220 /* AESCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63013D5B230088B90021D220 /* AESCrypto.swift */; };
+		63013D5E23008FBB0021D220 /* ChargeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63013D5D23008FBB0021D220 /* ChargeClient.swift */; };
+		63013D60230090400021D220 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63013D5F230090400021D220 /* Transaction.swift */; };
+		63013D64230094700021D220 /* PaymentProccesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63013D62230094700021D220 /* PaymentProccesViewController.swift */; };
+		63013D65230094700021D220 /* PaymentProccesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63013D63230094700021D220 /* PaymentProccesViewController.xib */; };
+		63013D6D2300C2C50021D220 /* CodableStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63013D6C2300C2C50021D220 /* CodableStorage.swift */; };
+		63013D6F2300C3370021D220 /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63013D6E2300C3370021D220 /* DataContainer.swift */; };
+		63013D712300C36A0021D220 /* StorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63013D702300C36A0021D220 /* StorageType.swift */; };
+		63013D742300C3B10021D220 /* DirectionStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63013D732300C3B10021D220 /* DirectionStorage.swift */; };
+		63013D762300C5360021D220 /* TransactionStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63013D752300C5350021D220 /* TransactionStorage.swift */; };
+		63013D7A2300CD790021D220 /* BoughtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63013D792300CD790021D220 /* BoughtViewController.swift */; };
+		63013D7C2300D94D0021D220 /* LauncheImgagePreload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63013D7B2300D94D0021D220 /* LauncheImgagePreload.swift */; };
 		630838E422FBD70100E843E9 /* CreateDirectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630838E322FBD70100E843E9 /* CreateDirectionViewController.swift */; };
 		630838E622FBDE0C00E843E9 /* UIView+shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630838E522FBDE0C00E843E9 /* UIView+shake.swift */; };
 		63153CAA22FF51DA0089DFE8 /* iOSDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63153CA922FF51DA0089DFE8 /* iOSDropDown.swift */; };
@@ -71,10 +83,21 @@
 		63FB891322E949600088932D /* SlideProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63FB891222E949600088932D /* SlideProductView.xib */; };
 		63FB891522E950770088932D /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB891422E950770088932D /* Thumbnail.swift */; };
 		63FB891722E9537C0088932D /* ShopCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FB891622E9537C0088932D /* ShopCart.swift */; };
-		BECEE1C3715A91D4A3D6AC9E /* Pods_shopapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B0BA8337C7DD5FB537BA80 /* Pods_shopapp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63013D5B230088B90021D220 /* AESCrypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AESCrypto.swift; sourceTree = "<group>"; };
+		63013D5D23008FBB0021D220 /* ChargeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeClient.swift; sourceTree = "<group>"; };
+		63013D5F230090400021D220 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		63013D62230094700021D220 /* PaymentProccesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProccesViewController.swift; sourceTree = "<group>"; };
+		63013D63230094700021D220 /* PaymentProccesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentProccesViewController.xib; sourceTree = "<group>"; };
+		63013D6C2300C2C50021D220 /* CodableStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableStorage.swift; sourceTree = "<group>"; };
+		63013D6E2300C3370021D220 /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
+		63013D702300C36A0021D220 /* StorageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageType.swift; sourceTree = "<group>"; };
+		63013D732300C3B10021D220 /* DirectionStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionStorage.swift; sourceTree = "<group>"; };
+		63013D752300C5350021D220 /* TransactionStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionStorage.swift; sourceTree = "<group>"; };
+		63013D792300CD790021D220 /* BoughtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoughtViewController.swift; sourceTree = "<group>"; };
+		63013D7B2300D94D0021D220 /* LauncheImgagePreload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncheImgagePreload.swift; sourceTree = "<group>"; };
 		630838E322FBD70100E843E9 /* CreateDirectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDirectionViewController.swift; sourceTree = "<group>"; };
 		630838E522FBDE0C00E843E9 /* UIView+shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+shake.swift"; sourceTree = "<group>"; };
 		63153CA922FF51DA0089DFE8 /* iOSDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSDropDown.swift; sourceTree = "<group>"; };
@@ -141,9 +164,6 @@
 		63FB891222E949600088932D /* SlideProductView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideProductView.xib; sourceTree = "<group>"; };
 		63FB891422E950770088932D /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
 		63FB891622E9537C0088932D /* ShopCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCart.swift; sourceTree = "<group>"; };
-		73B0BA8337C7DD5FB537BA80 /* Pods_shopapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shopapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		98950B8DDEE111C0F949AB85 /* Pods-shopapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopapp.release.xcconfig"; path = "Target Support Files/Pods-shopapp/Pods-shopapp.release.xcconfig"; sourceTree = "<group>"; };
-		D76F41D76C87C0074062E71B /* Pods-shopapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopapp.debug.xcconfig"; path = "Target Support Files/Pods-shopapp/Pods-shopapp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +171,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BECEE1C3715A91D4A3D6AC9E /* Pods_shopapp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,26 +180,46 @@
 		05EDB095BE53970DA9D210ED /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D76F41D76C87C0074062E71B /* Pods-shopapp.debug.xcconfig */,
-				98950B8DDEE111C0F949AB85 /* Pods-shopapp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		22396337A61AF79D39CA46FA /* Frameworks */ = {
+		63013D612300943B0021D220 /* PaymentProcces */ = {
 			isa = PBXGroup;
 			children = (
-				73B0BA8337C7DD5FB537BA80 /* Pods_shopapp.framework */,
+				63013D62230094700021D220 /* PaymentProccesViewController.swift */,
+				63013D63230094700021D220 /* PaymentProccesViewController.xib */,
 			);
-			name = Frameworks;
+			path = PaymentProcces;
+			sourceTree = "<group>";
+		};
+		63013D6B2300C29F0021D220 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				63013D722300C3A30021D220 /* Objects */,
+				63013D6C2300C2C50021D220 /* CodableStorage.swift */,
+				63013D6E2300C3370021D220 /* DataContainer.swift */,
+				63013D702300C36A0021D220 /* StorageType.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		63013D722300C3A30021D220 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				63013D732300C3B10021D220 /* DirectionStorage.swift */,
+				63013D752300C5350021D220 /* TransactionStorage.swift */,
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 		632FFF2E22FE8C2300393AE7 /* Pay */ = {
 			isa = PBXGroup;
 			children = (
+				63013D612300943B0021D220 /* PaymentProcces */,
 				632FFF2F22FE8DA300393AE7 /* PayViewController.swift */,
 				63153CB122FFB4C50089DFE8 /* KeysClient.swift */,
+				63013D5D23008FBB0021D220 /* ChargeClient.swift */,
 			);
 			path = Pay;
 			sourceTree = "<group>";
@@ -191,7 +230,6 @@
 				6342A37222E1341D00F15639 /* shopapp */,
 				6342A37122E1341D00F15639 /* Products */,
 				05EDB095BE53970DA9D210ED /* Pods */,
-				22396337A61AF79D39CA46FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -206,6 +244,7 @@
 		6342A37222E1341D00F15639 /* shopapp */ = {
 			isa = PBXGroup;
 			children = (
+				63013D6B2300C29F0021D220 /* Storage */,
 				63D03D9F22F65F6E001A87A7 /* Search */,
 				63671B9722E81B61001564A5 /* IndividualProduct */,
 				63F4D61E22E6BC9B00036737 /* ProductsCollectionView */,
@@ -224,6 +263,7 @@
 				63F5088D22E389D200A7FDA8 /* CustomTabBarViewController.swift */,
 				63F508AC22E3F6D900A7FDA8 /* Config.swift */,
 				63FB891622E9537C0088932D /* ShopCart.swift */,
+				63013D7B2300D94D0021D220 /* LauncheImgagePreload.swift */,
 			);
 			path = shopapp;
 			sourceTree = "<group>";
@@ -290,6 +330,7 @@
 			children = (
 				63833C6922FA7A1F007F74D6 /* BoughtTableViewCell.swift */,
 				63833C6A22FA7A1F007F74D6 /* BoughtTableViewCell.xib */,
+				63013D792300CD790021D220 /* BoughtViewController.swift */,
 			);
 			path = Bought;
 			sourceTree = "<group>";
@@ -347,6 +388,7 @@
 				63833C6422FA7378007F74D6 /* Direction.swift */,
 				63ACFC4622FD2C12009A9091 /* Offer.swift */,
 				63153CAF22FFB2BE0089DFE8 /* Charge.swift */,
+				63013D5F230090400021D220 /* Transaction.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -374,6 +416,7 @@
 				630838E522FBDE0C00E843E9 /* UIView+shake.swift */,
 				63153CA922FF51DA0089DFE8 /* iOSDropDown.swift */,
 				63153CB322FFCBF90089DFE8 /* UIDevice.swift */,
+				63013D5B230088B90021D220 /* AESCrypto.swift */,
 			);
 			path = UIUtils;
 			sourceTree = "<group>";
@@ -385,11 +428,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6342A38222E1341E00F15639 /* Build configuration list for PBXNativeTarget "shopapp" */;
 			buildPhases = (
-				4D823F9DC654E59C8E450649 /* [CP] Check Pods Manifest.lock */,
 				6342A36C22E1341D00F15639 /* Sources */,
 				6342A36D22E1341D00F15639 /* Frameworks */,
 				6342A36E22E1341D00F15639 /* Resources */,
-				2F47BC4FD6537A55A523A8B8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -449,6 +490,7 @@
 				63833C6C22FA7A1F007F74D6 /* BoughtTableViewCell.xib in Resources */,
 				63F4D61D22E6B3F700036737 /* SlideHomeView.xib in Resources */,
 				63F5089A22E39D0100A7FDA8 /* CategoryTableViewCell.xib in Resources */,
+				63013D65230094700021D220 /* PaymentProccesViewController.xib in Resources */,
 				63D03DA722F66A0C001A87A7 /* ProductResultTableViewCell.xib in Resources */,
 				63153CAE22FFA3A90089DFE8 /* ProductsHeaderCollectionReusableView.xib in Resources */,
 				63671B9622E81B59001564A5 /* IndividualProductViewController.xib in Resources */,
@@ -456,48 +498,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2F47BC4FD6537A55A523A8B8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-shopapp/Pods-shopapp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-shopapp/Pods-shopapp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-shopapp/Pods-shopapp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4D823F9DC654E59C8E450649 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-shopapp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6342A36C22E1341D00F15639 /* Sources */ = {
@@ -510,22 +510,27 @@
 				63ACFC4922FD2CFF009A9091 /* PromotionClient.swift in Sources */,
 				63472A0B22F7DFF7009D91F8 /* CarTableViewCell.swift in Sources */,
 				63F4D62022E6BCDE00036737 /* ProductsCollectionView.swift in Sources */,
+				63013D5E23008FBB0021D220 /* ChargeClient.swift in Sources */,
 				63F5089622E39A9200A7FDA8 /* UIView+setUpUI.swift in Sources */,
 				63F5088C22E36FFC00A7FDA8 /* CategoryViewController.swift in Sources */,
+				63013D64230094700021D220 /* PaymentProccesViewController.swift in Sources */,
 				63153CAD22FFA3A90089DFE8 /* ProductsHeaderCollectionReusableView.swift in Sources */,
 				63F508AB22E3F68800A7FDA8 /* Status.swift in Sources */,
 				63F508A022E3EC5F00A7FDA8 /* UIImage+Url+Cache.swift in Sources */,
 				63FB891722E9537C0088932D /* ShopCart.swift in Sources */,
 				63ACFC4722FD2C12009A9091 /* Offer.swift in Sources */,
+				63013D712300C36A0021D220 /* StorageType.swift in Sources */,
 				63153CB022FFB2BE0089DFE8 /* Charge.swift in Sources */,
 				630838E622FBDE0C00E843E9 /* UIView+shake.swift in Sources */,
 				63FB891522E950770088932D /* Thumbnail.swift in Sources */,
 				63F5089222E3929100A7FDA8 /* AccountViewController.swift in Sources */,
 				63153CB222FFB4C50089DFE8 /* KeysClient.swift in Sources */,
+				63013D742300C3B10021D220 /* DirectionStorage.swift in Sources */,
 				63FB891122E949410088932D /* SlideProductView.swift in Sources */,
 				63472A0722F7C88C009D91F8 /* ResultsViewController.swift in Sources */,
 				6342A37422E1341D00F15639 /* AppDelegate.swift in Sources */,
 				63F508A922E3F56900A7FDA8 /* JSONResponse.swift in Sources */,
+				63013D6D2300C2C50021D220 /* CodableStorage.swift in Sources */,
 				63F5089922E39D0100A7FDA8 /* CategoryTableViewCell.swift in Sources */,
 				63F5088822E36B3F00A7FDA8 /* Category.swift in Sources */,
 				63F508A722E3F56900A7FDA8 /* Client.swift in Sources */,
@@ -535,6 +540,8 @@
 				63F5089422E3985700A7FDA8 /* UIColor.swift in Sources */,
 				63671B9222E80DDD001564A5 /* IndividualCategoryViewController.swift in Sources */,
 				63F508A622E3F56900A7FDA8 /* APIClient.swift in Sources */,
+				63013D7C2300D94D0021D220 /* LauncheImgagePreload.swift in Sources */,
+				63013D762300C5360021D220 /* TransactionStorage.swift in Sources */,
 				63F5089022E3928100A7FDA8 /* CartViewController.swift in Sources */,
 				63530A4C22F92C360068951C /* CellActionDelegate.swift in Sources */,
 				63472A0E22F7EA76009D91F8 /* UIView+Borders.swift in Sources */,
@@ -543,6 +550,7 @@
 				632FFF3022FE8DA300393AE7 /* PayViewController.swift in Sources */,
 				63F4D61922E6B39100036737 /* SlideHomeView.swift in Sources */,
 				63F508AF22E404DA00A7FDA8 /* CategoryClient.swift in Sources */,
+				63013D60230090400021D220 /* Transaction.swift in Sources */,
 				63833C6E22FA8D1B007F74D6 /* FAQViewController.swift in Sources */,
 				63F508A822E3F56900A7FDA8 /* HTTPResponse.swift in Sources */,
 				63F5088A22E36E9F00A7FDA8 /* HomeViewController.swift in Sources */,
@@ -550,10 +558,13 @@
 				63671B9022E7F952001564A5 /* ProductClient.swift in Sources */,
 				63D03DA622F66A0C001A87A7 /* ProductResultTableViewCell.swift in Sources */,
 				63833C7022FA8DF8007F74D6 /* DirectionsViewController.swift in Sources */,
+				63013D7A2300CD790021D220 /* BoughtViewController.swift in Sources */,
 				63833C6522FA7378007F74D6 /* Direction.swift in Sources */,
+				63013D6F2300C3370021D220 /* DataContainer.swift in Sources */,
 				630838E422FBD70100E843E9 /* CreateDirectionViewController.swift in Sources */,
 				63F5089C22E3A50A00A7FDA8 /* PaddingLabel.swift in Sources */,
 				63671B9522E81B59001564A5 /* IndividualProductViewController.swift in Sources */,
+				63013D5C230088B90021D220 /* AESCrypto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -697,7 +708,6 @@
 		};
 		6342A38322E1341E00F15639 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D76F41D76C87C0074062E71B /* Pods-shopapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -715,7 +725,6 @@
 		};
 		6342A38422E1341E00F15639 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98950B8DDEE111C0F949AB85 /* Pods-shopapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

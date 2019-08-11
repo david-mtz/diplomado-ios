@@ -58,6 +58,7 @@ extension DirectionsViewController: UITableViewDelegate, UITableViewDataSource 
             directions.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
             ShopCart.shared.directions = directions
+            ShopCart.shared.saveDirectionStorage()
             directionsTableView.reloadData()
         }
     }

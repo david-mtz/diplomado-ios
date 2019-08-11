@@ -14,10 +14,23 @@ class ShopCart {
     
     var products: [Product] = [Product]()
     var directions: [Direction] = [Direction]()
-    
+    var purchased: [TransactionStored] = [TransactionStored]()
+
     init() {
-        directions.append(Direction(alias: "Casa", avenue: "Av. Tepetlapa", outdoorNumber: "30B", interiorNumber: "21", zp: "04800", colony: "Alianza popular revolucionaria", town: "Ciudad de México", state: "Ciudad de México", phone: "5531056094"))
     }
     
+    func loadStorages() {
+        directions = DirectionStorage.shared.load() ?? [Direction]()
+        purchased = TransactionStorage.shared.load()  ?? [TransactionStored]()
+        
+    }
+    
+    func saveDirectionStorage() {
+        DirectionStorage.shared.save(data: directions)
+    }
+    
+    func saveTransactionStorage() {
+        TransactionStorage.shared.save(data: purchased)
+    }
     
 }

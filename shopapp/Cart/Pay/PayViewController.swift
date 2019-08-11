@@ -25,6 +25,7 @@ class PayViewController: UIViewController {
     var selectedDirection: Direction? = nil
     var indexSelectedMonthExp: String? = nil
     var indexSelectedYearExp: String? = nil
+    @IBOutlet weak var confirmPayButton: UIButton!
     
     var sumProducts: Float {
         get {
@@ -140,13 +141,24 @@ class PayViewController: UIViewController {
     
     @IBAction func checkoutConfirmButtonAction(_ sender: UIButton) {
         if checkTextField(fields: [directionTextField, cvvCardTextField, creditCardTextField, yearExpTextField, monthExpTextField, cardHolderTextField]) && validationFields() && selectedDirection != nil {
+            sender.isEnabled = false
             let identifier = UIDevice.identifier
             let data = ChargeData(products: ShopCart.shared.products, amount: total, creditCard: CreditCard(holder: cardHolderTextField.text!, number: creditCardTextField.text!, monthExpiration: monthExpTextField.text!, yearExpiration: yearExpTextField.text!), direction: selectedDirection!)
-            let cifrar = data.toJSON()
-            let charge = Charge(uidevice: identifier, data: cifrar)
-            // TODO: Call service simtric keys and send information pay
+            KeysClient.shared.getKey(uidevice: identifier) { [weak self] (containerKey) in
+                guard let strongSelf = self, var key = containerKey.key else {return}
+                let cipherText = data.cipherJSON(key: key)
+                self?.sendData(identifier: identifier, data: cipherText)
+            }
             // block any action
         }
+    }
+    
+    func sendData(identifier: String, data: String?) {
+        let payload = ChargeRequest(uidevice: identifier, data: data ?? "")
+        let loaderController = PaymentProccesViewController(nibName: "PaymentProccesViewController", bundle: nil)
+        loaderController.charge = payload
+        loaderController.delegate = self
+        present(loaderController, animated: true)
     }
     
     func validationFields() -> Bool {
@@ -189,4 +201,31 @@ class PayViewController: UIViewController {
     }
     */
 
+}
+
+extension PayViewController: ActionAfterPayDelegate {
+    func success(transaction: TransactionStored) {
+        navigationController?.popViewController(animated: true)
+        ShopCart.shared.products = []
+        ShopCart.shared.purchased.append(transaction)
+        ShopCart.shared.saveTransactionStorage()
+        if let tabItems = tabBarController?.tabBar.items, let navigation = navigationController {
+            let tabItem = tabItems[2]
+            tabItem.badgeValue = nil
+            navigation.popViewController(animated: true)
+        }
+    }
+    
+    func error() {
+        creditCardTextField.text = ""
+        cardHolderTextField.text = ""
+        monthExpTextField.text = ""
+        monthExpTextField.selectedIndex = nil
+        yearExpTextField.text = ""
+        yearExpTextField.selectedIndex = nil
+        confirmPayButton.isEnabled = true
+        //print("Hubo un error en el pago...")
+    }
+    
+    
 }

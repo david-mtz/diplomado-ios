@@ -40,16 +40,18 @@ struct Client {
         request.setValue(contentType, forHTTPHeaderField: "Content-Type")
         request.httpMethod = method
         request.httpBody = body
+        //print("Data send request:", String(decoding: body ?? Data(), as: UTF8.self))
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if error != nil {
+                //print("Error", error)
                 errorHandler?(error)
                 return
             }
             let response = HTTPResponse(reponse: response as! HTTPURLResponse)
             DispatchQueue.main.async {
                 if let dataDebug = data, let stringD = String(data: dataDebug, encoding: .utf8) {
-                    
+                    //print("Data response: ", dataDebug, stringD)
                 }
                 completionHandler?(response, data)
             }
