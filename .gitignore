@@ -1,0 +1,6 @@
+# Mac OS X Finder
+.DS_Store
+
+# Cocoapods
+Pods/
+
