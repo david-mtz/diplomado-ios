@@ -709,7 +709,7 @@
 		6342A38322E1341E00F15639 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = shopapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -726,7 +726,7 @@
 		6342A38422E1341E00F15639 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = shopapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
